@@ -266,7 +266,7 @@ func (bl *BeeLogger) writeMsg(logLevel int, msg string, v ...interface{}) error 
 	}
 
 	if len(v) > 0 {
-		if msg == nil{
+		if msg == "" {
 		    msg = fmt.Sprint(v...)
 		} else {
 		    msg = fmt.Sprintf(msg, v...)
