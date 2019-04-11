@@ -266,7 +266,11 @@ func (bl *BeeLogger) writeMsg(logLevel int, msg string, v ...interface{}) error 
 	}
 
 	if len(v) > 0 {
-		msg = fmt.Sprintf(msg, v...)
+		if msg == nil{
+		    msg = fmt.Sprint(v...)
+		} else {
+		    msg = fmt.Sprintf(msg, v...)
+		}
 	}
 
 	msg = bl.prefix + " " + msg
